@@ -13,4 +13,7 @@ class AddTransactionViewModel: ObservableObject {
     
     @Published var currencyPurchased = "EUR"
     @Published var quantityPurchased = 0
+    
+    @Published var yourCurrencySheet = false
+    @Published var wannaCurrencySheet = false
 }

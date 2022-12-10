@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrencyRate: View {
-    @StateObject var vm = ViewModel()
+    @StateObject var vm = CurrencyRateViewModel()
     var body: some View {
         NavigationView {
             List {

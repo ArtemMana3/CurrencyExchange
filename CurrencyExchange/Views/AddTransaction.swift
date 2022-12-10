@@ -10,8 +10,7 @@ import SwiftUI
 struct AddTransaction: View {
     @Environment(\.dismiss) var dismiss
     
-    @State private var yourCurrencySheet = false
-    @State private var wannaCurrencySheet = false
+    @FocusState private var quantityIsFocused: Bool
     
     @ObservedObject var superVM: CurrencyExchangeHistoryViewModel
     @StateObject var vm = AddTransactionViewModel()
@@ -20,16 +19,23 @@ struct AddTransaction: View {
         Form {
             Section("Your currency and quantity") {
                 Button("\(vm.yourCurrency.getFlag()) \(vm.yourCurrency)") {
-                    yourCurrencySheet = true
+                    vm.yourCurrencySheet = true
+                    quantityIsFocused = false
                 }
                 TextField("Quantity", value: $vm.quantity, format: .number)
+                    .keyboardType(.numberPad)
+                    .focused($quantityIsFocused)
+
             }
             
             Section("What did you buy") {
                 Button("\(vm.currencyPurchased.getFlag()) \(vm.currencyPurchased)") {
-                    wannaCurrencySheet = true
+                    vm.wannaCurrencySheet = true
+                    quantityIsFocused = false
                 }
                 TextField("Quantity", value: $vm.quantityPurchased, format: .number)
+                    .keyboardType(.numberPad)
+                    .focused($quantityIsFocused)
             }
             Section {
                 Button("Save") {
@@ -38,16 +44,16 @@ struct AddTransaction: View {
                                    quantityPurchased: vm.quantityPurchased,
                                    currencyPurchased: vm.currencyPurchased)
                     dismiss()
+                    quantityIsFocused = false
                 }
-                
             }
-            .navigationTitle("Add transaction")
-            .navigationBarTitleDisplayMode(.inline)
         }
-        .sheet(isPresented: $yourCurrencySheet) {
+        .navigationTitle("Add transaction")
+        .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $vm.yourCurrencySheet) {
             ChooseCurrency(chosenCurrency: $vm.yourCurrency)
         }
-        .sheet(isPresented: $wannaCurrencySheet) {
+        .sheet(isPresented: $vm.wannaCurrencySheet) {
             ChooseCurrency(chosenCurrency: $vm.currencyPurchased)
         }
     }

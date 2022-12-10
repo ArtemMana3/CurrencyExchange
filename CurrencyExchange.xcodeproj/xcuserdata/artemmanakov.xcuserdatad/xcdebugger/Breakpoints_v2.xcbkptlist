@@ -158,8 +158,8 @@
             filePath = "CurrencyExchange/ViewModels/CurrencyExchange-ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "CurrencyExchange/ViewModels/CurrencyExchange-ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "CurrencyExchange/ViewModels/CurrencyExchange-ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "loadData()"
             landmarkType = "7">
             <Locations>
@@ -374,22 +374,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A0F8F670-DE8B-448C-A419-0A423C0E09DE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CurrencyExchange/ViewModels/CurrencyRate-ViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "ViewModel"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "AC85BEA4-FBA7-4520-B8E0-2DA21C2F466D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -399,8 +383,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "10"
             endingLineNumber = "10"
-            landmarkName = "CurrencyRate"
-            landmarkType = "21">
+            landmarkName = "CurrencyRateViewModel"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -413,9 +397,9 @@
             filePath = "CurrencyExchange/ViewModels/CurrencyRate-ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "ViewModel"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "CurrencyRateViewModel"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>

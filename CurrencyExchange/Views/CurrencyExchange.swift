@@ -10,8 +10,9 @@ import SwiftUI
 struct CurrencyExchange: View {
     @State private var yourCurrencySheet = false
     @State private var wannaCurrencySheet = false
+    @FocusState private var amountIsFocused: Bool
 
-    @StateObject var viewModel = ViewModel()
+    @StateObject var viewModel = CurrencyExchangeViewModel()
 
     var body: some View {
         NavigationView {
@@ -44,6 +45,7 @@ struct CurrencyExchange: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
                     .padding(.horizontal)
+                    .focused($amountIsFocused)
                 
                 
                 Text("I receive")
@@ -101,54 +103,14 @@ struct CurrencyExchange: View {
             .sheet(isPresented: $wannaCurrencySheet) {
                 ChooseCurrency(chosenCurrency: $viewModel.wannaCurrency)
             }
-            
         }
         .task{
             await viewModel.loadData()
         }
+        .onTapGesture {
+            amountIsFocused = false
+        }
     }
-    
-//    struct ExchangeParameters: View {
-//        var mainText: String
-//        var currency: String
-//        var amount: Int
-//        var currencySheet: Bool
-//        @StateObject var viewModel = ViewModel()
-//
-//        var body: some View {
-//            VStack() {
-//                Text(mainText)
-//                    .frame(maxWidth: .infinity, alignment: .leading)
-//                    .padding(.leading)
-//                    .foregroundColor(.gray)
-//
-//                Button {
-//                    currencySheet = true
-//                } label: {
-//                    Text("\(viewModel.getFlag(currency: currency)) \(currency)")
-//                        .font(.headline)
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                        .frame(height: 55)
-//                        .padding(.leading)
-//                        .background(Color.gray.opacity(0.7))
-//                        .foregroundColor(.white)
-//                        .cornerRadius(10)
-//                        .padding(.horizontal)
-//                }
-//
-//                TextField("Quantity", value: $viewModel.amount, format: .number)
-//                    .font(.headline)
-//                    .keyboardType(.decimalPad)
-//                    .padding(.leading)
-//                    .frame(height: 55)
-//                    .background(Color.gray.opacity(0.7))
-//                    .foregroundColor(.white)
-//                    .cornerRadius(10)
-//                    .padding(.horizontal)
-//            }
-//        }
-//    }
-    
 }
 
 struct CurrencyExchange_Previews: PreviewProvider {
