@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F30948F29434129006AC618 /* CurrencyExchangeHistory-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F30948E29434129006AC618 /* CurrencyExchangeHistory-ViewModel.swift */; };
-		2F30949229434C6B006AC618 /* FlagOrSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F30949129434C6B006AC618 /* FlagOrSymbol.swift */; };
+		2F30949229434C6B006AC618 /* CreateSing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F30949129434C6B006AC618 /* CreateSing.swift */; };
 		2F62996429200E25002B787B /* CurrencyExchangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62996329200E25002B787B /* CurrencyExchangeApp.swift */; };
 		2F62996629200E25002B787B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62996529200E25002B787B /* ContentView.swift */; };
 		2F62996829200E27002B787B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F62996729200E27002B787B /* Assets.xcassets */; };
@@ -28,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		2F30948E29434129006AC618 /* CurrencyExchangeHistory-ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CurrencyExchangeHistory-ViewModel.swift"; sourceTree = "<group>"; };
-		2F30949129434C6B006AC618 /* FlagOrSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagOrSymbol.swift; sourceTree = "<group>"; };
+		2F30949129434C6B006AC618 /* CreateSing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSing.swift; sourceTree = "<group>"; };
 		2F62996029200E25002B787B /* CurrencyExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F62996329200E25002B787B /* CurrencyExchangeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeApp.swift; sourceTree = "<group>"; };
 		2F62996529200E25002B787B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,12 +58,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F30949029434C4C006AC618 /* Protocols */ = {
+		2F30949029434C4C006AC618 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				2F30949129434C6B006AC618 /* FlagOrSymbol.swift */,
+				2F30949129434C6B006AC618 /* CreateSing.swift */,
 			);
-			path = Protocols;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		2F62995729200E24002B787B = {
@@ -87,11 +87,10 @@
 			children = (
 				2F62996329200E25002B787B /* CurrencyExchangeApp.swift */,
 				2F6459C32941D9D300637C94 /* Models */,
-				2F30949029434C4C006AC618 /* Protocols */,
+				2F30949029434C4C006AC618 /* Extension */,
 				2F6459C82941DE0F00637C94 /* Service */,
 				2F6459C52941D9F000637C94 /* ViewModels */,
 				2F6459C42941D9E500637C94 /* Views */,
-				2F62996529200E25002B787B /* ContentView.swift */,
 				2FF8024529228BFF003DF306 /* CurrencyExchangeHistory */,
 				2F88A0D92920F60B0044E913 /* ExchangeHistory.xcdatamodeld */,
 				2F62996729200E27002B787B /* Assets.xcassets */,
@@ -119,6 +118,7 @@
 		2F6459C42941D9E500637C94 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2F62996529200E25002B787B /* ContentView.swift */,
 				2F62997129200EBA002B787B /* CurrencyRate.swift */,
 				2F62997329200ECD002B787B /* CurrencyExchange.swift */,
 				2FF8024C29229809003DF306 /* ChooseCurrency.swift */,
@@ -226,7 +226,7 @@
 			files = (
 				2F6459CA2941DEBA00637C94 /* ExchangeRatesService.swift in Sources */,
 				2F6459C72941DAC800637C94 /* CurrencyExchange-ViewModel.swift in Sources */,
-				2F30949229434C6B006AC618 /* FlagOrSymbol.swift in Sources */,
+				2F30949229434C6B006AC618 /* CreateSing.swift in Sources */,
 				2F62996629200E25002B787B /* ContentView.swift in Sources */,
 				2F62997229200EBA002B787B /* CurrencyRate.swift in Sources */,
 				2FF8024D29229809003DF306 /* ChooseCurrency.swift in Sources */,
@@ -375,6 +375,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -404,6 +405,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension CurrencyExchangeHistory {
-    class ViewModel: FlagOrSymbol {
+    class ViewModel {
         func getRate(_ transaction: Transaction) -> String {
             let quantityPurchased = Double(transaction.quantityPurchased == 0 ? 1 : transaction.quantityPurchased)
             // Divide by zero is not allowed

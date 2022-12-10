@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChooseCurrency: View, FlagOrSymbol {
+struct ChooseCurrency: View {
     @Binding var chosenCurrency: String
     @Environment(\.dismiss) var dismiss
 
@@ -20,7 +20,7 @@ struct ChooseCurrency: View, FlagOrSymbol {
                             chosenCurrency = necessaryCurrency
                             dismiss()
                         } label: {
-                            Text("\(getFlag(currency: necessaryCurrency)) \(necessaryCurrency)")
+                            Text("\(necessaryCurrency.getFlag()) \(necessaryCurrency)")
                                 .foregroundColor(.black)
                         }
                     }

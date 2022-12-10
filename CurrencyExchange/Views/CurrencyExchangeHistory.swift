@@ -16,7 +16,7 @@ struct CurrencyExchangeHistory: View {
             List {
                 ForEach(dc.transactions) { transaction in
                     HStack(alignment: .center) {
-                        Text("\(transaction.quantity)\(vm.getSymbol(forCurrencyCode: transaction.yourCurrency ?? "Unknown") ?? "$")")
+                        Text("\(transaction.quantity)\(transaction.yourCurrency?.getSymbol() ?? "$")")
                             .frame(minWidth: 90, alignment: .leading)
 
                         Spacer()
@@ -28,8 +28,7 @@ struct CurrencyExchangeHistory: View {
                         }
                         Spacer()
 
-    
-                        Text("\(transaction.quantityPurchased)\(vm.getSymbol(forCurrencyCode: transaction.currencyPurchased ?? "Unknown") ?? "$")")
+                        Text("\(transaction.quantityPurchased)\(transaction.currencyPurchased?.getSymbol() ?? "$")")
                             .frame(minWidth: 90, alignment: .trailing)
                     }
                     

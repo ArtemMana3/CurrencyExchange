@@ -15,7 +15,7 @@ struct CurrencyRate: View {
                 Section {
                     if let rate = vm.exchangeRates[vm.base] {
                         HStack {
-                            Text(vm.getFlag(currency: vm.base))
+                            Text(vm.base.getFlag())
                                 .font(.largeTitle)
                             VStack(alignment: .leading) {
                                 Text(vm.base)
@@ -27,7 +27,7 @@ struct CurrencyRate: View {
                 ForEach(vm.necessaryCurrencies, id: \.self) { necessaryCurrency in
                     if let rate = vm.exchangeRates[necessaryCurrency] {
                         HStack {
-                            Text(vm.getFlag(currency: necessaryCurrency))
+                            Text(necessaryCurrency.getFlag())
                                 .font(.largeTitle)
                             VStack(alignment: .leading) {
                                 Text(necessaryCurrency)

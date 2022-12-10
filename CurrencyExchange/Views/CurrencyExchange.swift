@@ -24,7 +24,7 @@ struct CurrencyExchange: View {
                 Button {
                     yourCurrencySheet = true
                 } label: {
-                    Text("\(viewModel.getFlag(currency: viewModel.yourCurrency)) \(viewModel.yourCurrency)")
+                    Text("\(viewModel.yourCurrency.getFlag()) \(viewModel.yourCurrency)")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .frame(height: 55)
@@ -54,7 +54,7 @@ struct CurrencyExchange: View {
                 Button {
                     wannaCurrencySheet = true
                 } label: {
-                    Text("\(viewModel.getFlag(currency: viewModel.wannaCurrency)) \(viewModel.wannaCurrency)")
+                    Text("\(viewModel.wannaCurrency.getFlag()) \(viewModel.wannaCurrency)")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .frame(height: 55)

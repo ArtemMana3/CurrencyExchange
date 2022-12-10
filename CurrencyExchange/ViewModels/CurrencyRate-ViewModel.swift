@@ -7,17 +7,17 @@
 
 import Foundation
 
-extension CurrencyRate {    
-    @MainActor class ViewModel: ObservableObject, FlagOrSymbol {
+extension CurrencyRate {
+    @MainActor class ViewModel: ObservableObject {
         @Published var exchangeRates = [String: Double]()
         @Published var base = "USD"
-                
+
         var necessaryCurrencies: [String] {
             return Currency.necessaryCurrencies.filter { currency in
                 currency != base
             }
         }
-        
+
         func loadData(base: String) async {
             self.base = base
             let exchangeRatesService = ExchangeRatesService()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddTransaction: View, FlagOrSymbol {
+struct AddTransaction: View {
     @Environment(\.dismiss) var dismiss
     
     @State private var yourCurrency = "USD"
@@ -24,14 +24,14 @@ struct AddTransaction: View, FlagOrSymbol {
     var body: some View {
         Form {
             Section("Your currency and quantity") {
-                Button("\(getFlag(currency: yourCurrency)) \(yourCurrency)") {
+                Button("\(yourCurrency.getFlag()) \(yourCurrency)") {
                     yourCurrencySheet = true
                 }
                 TextField("Quantity", value: $quantity, format: .number)
             }
             
             Section("What did you buy") {
-                Button("\(getFlag(currency: currencyPurchased)) \(currencyPurchased)") {
+                Button("\(currencyPurchased.getFlag()) \(currencyPurchased)") {
                     wannaCurrencySheet = true
                 }
                 TextField("Quantity", value: $quantityPurchased, format: .number)

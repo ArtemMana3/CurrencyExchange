@@ -8,7 +8,7 @@
 import Foundation
 
 extension CurrencyExchange {
-    @MainActor class ViewModel: ObservableObject, FlagOrSymbol {
+    @MainActor class ViewModel: ObservableObject {
         @Published var exchangeRates = [String: Double]()
                 
         @Published var yourCurrency = "USD"
