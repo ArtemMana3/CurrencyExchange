@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct CurrencyExchangeHistory: View {
-    @StateObject var dc = DataController()
-    var vm = ViewModel()
+    @StateObject var vm = CurrencyExchangeHistoryViewModel()
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(dc.transactions) { transaction in
+                ForEach(vm.transactions) { transaction in
                     HStack(alignment: .center) {
                         Text("\(transaction.quantity)\(transaction.yourCurrency?.getSymbol() ?? "$")")
                             .frame(minWidth: 90, alignment: .leading)
@@ -33,12 +32,12 @@ struct CurrencyExchangeHistory: View {
                     }
                     
                 }
-                .onDelete(perform: dc.deleteTransaction)
+                .onDelete(perform: vm.deleteTransaction)
             }
             .navigationTitle("History")
             .toolbar {
                 NavigationLink {
-                    AddTransaction(dc: dc)
+                    AddTransaction(superVM: vm)
                 } label: {
                     Label("Plus", systemImage: "plus")
                 }

@@ -23,6 +23,7 @@
 		2F88A0D82920F5500044E913 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F88A0D72920F5500044E913 /* DataController.swift */; };
 		2F88A0DB2920F60B0044E913 /* ExchangeHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F88A0D92920F60B0044E913 /* ExchangeHistory.xcdatamodeld */; };
 		2F88A0EB2920FAF60044E913 /* AddTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F88A0EA2920FAF60044E913 /* AddTransaction.swift */; };
+		2FA04D8E2944B26E004F7DAE /* AddTransaction-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA04D8D2944B26E004F7DAE /* AddTransaction-ViewModel.swift */; };
 		2FF8024D29229809003DF306 /* ChooseCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8024C29229809003DF306 /* ChooseCurrency.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		2F88A0D72920F5500044E913 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		2F88A0DA2920F60B0044E913 /* ExchangeHistory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExchangeHistory.xcdatamodel; sourceTree = "<group>"; };
 		2F88A0EA2920FAF60044E913 /* AddTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransaction.swift; sourceTree = "<group>"; };
+		2FA04D8D2944B26E004F7DAE /* AddTransaction-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTransaction-ViewModel.swift"; sourceTree = "<group>"; };
 		2FF8024C29229809003DF306 /* ChooseCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				2F629977292011DF002B787B /* CurrencyRate-ViewModel.swift */,
 				2F6459C62941DAC800637C94 /* CurrencyExchange-ViewModel.swift */,
 				2F30948E29434129006AC618 /* CurrencyExchangeHistory-ViewModel.swift */,
+				2FA04D8D2944B26E004F7DAE /* AddTransaction-ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F6459CA2941DEBA00637C94 /* ExchangeRatesService.swift in Sources */,
+				2FA04D8E2944B26E004F7DAE /* AddTransaction-ViewModel.swift in Sources */,
 				2F6459C72941DAC800637C94 /* CurrencyExchange-ViewModel.swift in Sources */,
 				2F30949229434C6B006AC618 /* CreateSing.swift in Sources */,
 				2F62996629200E25002B787B /* ContentView.swift in Sources */,

@@ -10,38 +10,33 @@ import SwiftUI
 struct AddTransaction: View {
     @Environment(\.dismiss) var dismiss
     
-    @State private var yourCurrency = "USD"
-    @State private var quantity = 0
-
-    @State private var currencyPurchased = "EUR"
-    @State private var quantityPurchased = 0
-        
     @State private var yourCurrencySheet = false
     @State private var wannaCurrencySheet = false
     
-    @ObservedObject var dc: DataController
-
+    @ObservedObject var superVM: CurrencyExchangeHistoryViewModel
+    @StateObject var vm = AddTransactionViewModel()
+    
     var body: some View {
         Form {
             Section("Your currency and quantity") {
-                Button("\(yourCurrency.getFlag()) \(yourCurrency)") {
+                Button("\(vm.yourCurrency.getFlag()) \(vm.yourCurrency)") {
                     yourCurrencySheet = true
                 }
-                TextField("Quantity", value: $quantity, format: .number)
+                TextField("Quantity", value: $vm.quantity, format: .number)
             }
             
             Section("What did you buy") {
-                Button("\(currencyPurchased.getFlag()) \(currencyPurchased)") {
+                Button("\(vm.currencyPurchased.getFlag()) \(vm.currencyPurchased)") {
                     wannaCurrencySheet = true
                 }
-                TextField("Quantity", value: $quantityPurchased, format: .number)
+                TextField("Quantity", value: $vm.quantityPurchased, format: .number)
             }
             Section {
                 Button("Save") {
-                    dc.addTransaction(quantity: quantity,
-                                      yourCurrency: yourCurrency,
-                                      quantityPurchased: quantityPurchased,
-                                      currencyPurchased: currencyPurchased)
+                    superVM.addTransaction(quantity: vm.quantity,
+                                   yourCurrency: vm.yourCurrency,
+                                   quantityPurchased: vm.quantityPurchased,
+                                   currencyPurchased: vm.currencyPurchased)
                     dismiss()
                 }
                 
@@ -50,16 +45,16 @@ struct AddTransaction: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         .sheet(isPresented: $yourCurrencySheet) {
-            ChooseCurrency(chosenCurrency: $yourCurrency)
+            ChooseCurrency(chosenCurrency: $vm.yourCurrency)
         }
         .sheet(isPresented: $wannaCurrencySheet) {
-            ChooseCurrency(chosenCurrency: $currencyPurchased)
+            ChooseCurrency(chosenCurrency: $vm.currencyPurchased)
         }
     }
 }
 
 struct AddTransaction_Previews: PreviewProvider {
     static var previews: some View {
-        AddTransaction(dc: DataController())
+        AddTransaction(superVM: CurrencyExchangeHistoryViewModel())
     }
 }

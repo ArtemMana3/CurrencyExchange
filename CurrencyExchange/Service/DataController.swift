@@ -8,31 +8,34 @@
 import CoreData
 import Foundation
 
-class DataController: ObservableObject {
+class DataController {
     let container = NSPersistentContainer(name: "ExchangeHistory")
-    @Published var transactions = [Transaction]()
     
-    init() {
+    static let shared = DataController()
+    
+    private init() {
         container.loadPersistentStores(completionHandler: { description, error in
             if let error = error {
                 print("Core Data failed to load: \(error.localizedDescription)")
             }
         })
-        fetchTransaction()
     }
     
-    func fetchTransaction() {
+    func fetchTransaction() -> [Transaction] {
         let request = NSFetchRequest<Transaction>(entityName: "Transaction")
         request.sortDescriptors = [NSSortDescriptor(keyPath: \Transaction.date, ascending: false)]
         do {
-            transactions = try container.viewContext.fetch(request)
+            let transactions = try container.viewContext.fetch(request)
+            return transactions
         } catch let error {
             print("Error fetching. \(error)")
+            return []
         }
     }
     
     func deleteTransaction(at offsets: IndexSet) {
         for offset in offsets {
+            let transactions = fetchTransaction()
             let transaction = transactions[offset]
             container.viewContext.delete(transaction)
         }
@@ -50,7 +53,5 @@ class DataController: ObservableObject {
         newTransaction.date = Date.now
 
         try? container.viewContext.save()
-        fetchTransaction()
-        
     }
 }
