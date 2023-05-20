@@ -20,9 +20,9 @@ struct ContentView: View {
                 .tabItem {
                     Label("Exchange", systemImage: "globe.europe.africa.fill")
                 }
-            CurrencyExchangeHistory()
+            CurrencySavings()
                 .tabItem {
-                    Label("History", systemImage: "bag.circle.fill")
+                    Label("Save", systemImage: "bag.circle.fill")
                 }
             MapLocal()
                 .tabItem {

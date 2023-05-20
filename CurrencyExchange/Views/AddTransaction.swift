@@ -6,43 +6,42 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct AddTransaction: View {
     @Environment(\.dismiss) var dismiss
-    
+
     @FocusState private var quantityIsFocused: Bool
-    
-    @ObservedObject var superVM: CurrencyExchangeHistoryViewModel
+
     @StateObject var vm = AddTransactionViewModel()
-    
+    @ObservedResults(CurrencyAccount.self) var accounts: Results<CurrencyAccount>
+
     var body: some View {
         Form {
-            Section("Your currency and quantity") {
-                Button("\(vm.yourCurrency.getFlag()) \(vm.yourCurrency)") {
-                    vm.yourCurrencySheet = true
-                    quantityIsFocused = false
-                }
-                TextField("Quantity", value: $vm.quantity, format: .number)
+            Section("Add transaction") {
+                TextField("Amount", value: $vm.amount, format: .number)
                     .keyboardType(.numberPad)
                     .focused($quantityIsFocused)
-
+                                
+                Picker("Account", selection: $vm.account) {
+                    ForEach(accounts, id: \.self) {
+                        Text($0.name).tag($0)
+                    }
+                }
+                
+                TextField("Comment", text: $vm.comment)
             }
             
-            Section("What did you buy") {
-                Button("\(vm.currencyPurchased.getFlag()) \(vm.currencyPurchased)") {
-                    vm.wannaCurrencySheet = true
-                    quantityIsFocused = false
-                }
-                TextField("Quantity", value: $vm.quantityPurchased, format: .number)
-                    .keyboardType(.numberPad)
-                    .focused($quantityIsFocused)
-            }
-            Section {
+            Section("Save") {
                 Button("Save") {
-                    superVM.addTransaction(quantity: vm.quantity,
-                                   yourCurrency: vm.yourCurrency,
-                                   quantityPurchased: vm.quantityPurchased,
-                                   currencyPurchased: vm.currencyPurchased)
+                    let transaction = TransactionCurrency()
+                    transaction.amount = vm.amount ?? 0.0
+                    transaction.comment = vm.comment
+                    transaction.accountId = vm.account._id.stringValue
+                    transaction.save()
+                    
+                    vm.account.updateAmount(amount: vm.amount ?? 0.0)
+        
                     dismiss()
                     quantityIsFocused = false
                 }
@@ -50,17 +49,16 @@ struct AddTransaction: View {
         }
         .navigationTitle("Add transaction")
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $vm.yourCurrencySheet) {
-            ChooseCurrency(chosenCurrency: $vm.yourCurrency)
-        }
-        .sheet(isPresented: $vm.wannaCurrencySheet) {
-            ChooseCurrency(chosenCurrency: $vm.currencyPurchased)
+        .onAppear {
+            if !accounts.isEmpty {
+                vm.account = accounts[0]
+            }
         }
     }
 }
 
 struct AddTransaction_Previews: PreviewProvider {
     static var previews: some View {
-        AddTransaction(superVM: CurrencyExchangeHistoryViewModel())
+        AddTransaction()
     }
 }
