@@ -33,6 +33,7 @@
 		2FAD2F672A0FF09D002E648B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAD2F662A0FF09D002E648B /* Location.swift */; };
 		2FAD2F692A0FF0B0002E648B /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAD2F682A0FF0B0002E648B /* APIResponse.swift */; };
 		2FAD2F6B2A0FF16D002E648B /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAD2F6A2A0FF16D002E648B /* Viewport.swift */; };
+		2FB96D3B2A193B7500580BC8 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB96D3A2A193B7500580BC8 /* TransactionList.swift */; };
 		2FBC0C1D2A19069A00E40089 /* CurrencyTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC0C1C2A19069A00E40089 /* CurrencyTransaction.swift */; };
 		2FBC0C1F2A19089000E40089 /* CurrencyTransactionExtansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC0C1E2A19089000E40089 /* CurrencyTransactionExtansion.swift */; };
 		2FF3194A2A18D741003FB70B /* CurrencyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF319492A18D741003FB70B /* CurrencyAccount.swift */; };
@@ -69,6 +70,7 @@
 		2FAD2F662A0FF09D002E648B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		2FAD2F682A0FF0B0002E648B /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		2FAD2F6A2A0FF16D002E648B /* Viewport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
+		2FB96D3A2A193B7500580BC8 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 		2FBC0C1C2A19069A00E40089 /* CurrencyTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTransaction.swift; sourceTree = "<group>"; };
 		2FBC0C1E2A19089000E40089 /* CurrencyTransactionExtansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTransactionExtansion.swift; sourceTree = "<group>"; };
 		2FF319492A18D741003FB70B /* CurrencyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAccount.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				2F69C12629EAAFD500958F46 /* MapView.swift */,
 				2F08BA532A18C4A2008D4596 /* CurrencySavings.swift */,
 				2FF3194D2A18DBEC003FB70B /* CreateAccount.swift */,
+				2FB96D3A2A193B7500580BC8 /* TransactionList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				2FF8024D29229809003DF306 /* ChooseCurrency.swift in Sources */,
 				2FF3194E2A18DBEC003FB70B /* CreateAccount.swift in Sources */,
 				2F88A0EB2920FAF60044E913 /* AddTransaction.swift in Sources */,
+				2FB96D3B2A193B7500580BC8 /* TransactionList.swift in Sources */,
 				2FAD2F652A0FF091002E648B /* Geometry.swift in Sources */,
 				2F62996429200E25002B787B /* CurrencyExchangeApp.swift in Sources */,
 				2F30948F29434129006AC618 /* CurrencyExchangeHistory-ViewModel.swift in Sources */,
@@ -512,7 +516,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CurrencyExchange/Preview Content\"";
-				DEVELOPMENT_TEAM = 434P797326;
+				DEVELOPMENT_TEAM = 4U6Z2B3M8H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show you the nearest banks";
@@ -545,7 +549,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CurrencyExchange/Preview Content\"";
-				DEVELOPMENT_TEAM = 434P797326;
+				DEVELOPMENT_TEAM = 4U6Z2B3M8H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show you the nearest banks";
