@@ -19,6 +19,12 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     
     func startUpdatingLocation() {
         locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func stopUpdatingLocation() {
+        print("Stop Location Updates")
+        locationManager.stopUpdatingLocation()
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
