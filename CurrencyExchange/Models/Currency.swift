@@ -13,5 +13,5 @@ struct Currency: Codable {
     var date: String
     var rates: [String: Double]
     
-    static let necessaryCurrencies = ["USD", "EUR", "UAH", "PLN", "GBP", "TRY", "CZK", "DKK", "CAD", "CHF"]
+    static let necessaryCurrencies = ["USD", "EUR", "PLN", "GBP", "TRY", "CZK", "DKK", "CAD", "CHF", "CNY", "JPY", "KRW"]
 }

@@ -14,7 +14,6 @@ struct MapLocal: View {
         VStack {
             if !vm.bankLocations.isEmpty {
                 MapView(initialLocation: vm.initialLocation, bankLocations: vm.bankLocations)
-                    .edgesIgnoringSafeArea(.all)
             } else {
                 ProgressView()
             }
