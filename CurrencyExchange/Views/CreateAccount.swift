@@ -24,7 +24,7 @@ struct CreateAccount: View {
                     quantityIsFocused = false
                 }
             
-                TextField("Amount", value: $vm.amount, format: .number)
+                TextField("Initial amount", value: $vm.amount, format: .number)
                     .keyboardType(.numberPad)
                     .focused($quantityIsFocused)
             }
@@ -41,7 +41,7 @@ struct CreateAccount: View {
                 }
             }
         }
-        .navigationTitle("Add transaction")
+        .navigationTitle("Add account")
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $vm.currencySheet) {
             ChooseCurrency(chosenCurrency: $vm.currency)
